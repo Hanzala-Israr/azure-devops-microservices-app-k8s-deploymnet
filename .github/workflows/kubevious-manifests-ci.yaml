@@ -52,7 +52,8 @@ jobs:
         id: istio-manifests-validation
         uses: kubevious/cli@v1.0.59
         with:
-          manifests: istio-manifests https://github.com/istio/istio/raw/master/manifests/charts/base/crds/crd-all.gen.yaml
+          # Changed master branch to a stable release-1.22 tag to resolve the 404 error
+          manifests: istio-manifests https://github.com/istio/istio/raw/release-1.22/manifests/charts/base/crds/crd-all.gen.yaml
 
       - name: Validate kustomize
         id: kustomize-validation
